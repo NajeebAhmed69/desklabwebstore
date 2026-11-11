@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeskLab </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo" onclick="closeProductPage()">DeskLab<span>PK</span></a>
+      <nav class="nav-links">
+      <nav class="nav-links">
+          <a href="#about" onclick="showHomePage()">About</a>
+        <a href="#catalog" onclick="showHomePage()">Products</a>
+        <a href="javascript:void(0)" onclick="openBusinessPlan()">Business Plan</a>
+      </nav>
+      </nav>
+      <button id="cart-btn" class="cart-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <!-- Store Home View -->
+  <div id="store-home-view">
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+      <div class="container hero-content">
+        <h1>About DeskLabPK</h1>
+       <p> Minimalist, ergonomic desk accessories designed for focus, comfort, and zero clutter.
+
+            we believe your workspace shapes how you think, create, and work. Whether you are coding late into the night, designing your next project, or studying for exams, a cluttered desk shouldn't get in the way of your focus.We started DeskLab with a simple goal: to make clean, ergonomic, and thoughtfully designed desk setups accessible without the inflated price tags. Every item in our catalog is chosen to solve a real everyday workspace problem—from eliminating neck strain with precision-machined laptop stands and reducing desk echo with merino wool felt mats, to hiding tangled wires and lighting up your desk without screen glare.
+
+        </p>
+         
+        <a href="#catalog" class="btn-primary">Shop Now</a>
+      </div>
+    </section>
+<!-- About Section -->
+    
+    <!-- Catalog Section -->
+    <main id="catalog" class="container section">
+      <div class="catalog-header">
+        <h2>Products </h2>
+        <div class="controls">
+          <input type="text" id="search-input" placeholder="Search products..." />
+       <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="organization">Organization</option>
+            <option value="lighting">Lighting</option>
+            <option value="ergonomics">Ergonomics</option>
+            <option value="peripherals">Peripherals</option>
+            <option value="power">Power & Charging</option>
+            <option value="accessories">Accessories</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="product-grid" class="product-grid">
+      
+      </div>
+      
+    </main>
+<section  class="about-section">
+      <div class="container about-content">
+       
+     
+        <div class="about-highlights">
+          <div class="highlight-box">
+            <strong>🇵🇰 Nationwide Delivery</strong>
+            <span>Fast shipping across Pakistan</span>
+          </div>
+          <div class="highlight-box">
+            <strong>💵 Cash on Delivery</strong>
+            <span>Pay safely at your doorstep</span>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+  <section id="business-plan-view" class="bp-section hidden">
+    <div class="container">
+      <div class="bp-top-bar">
+        <button onclick="showHomePage()" class="btn-secondary">← Back to Store</button>
+      </div>
+
+      <div class="bp-header">
+        <h1>DeskLabPK — Business Plan & Analytics</h1>
+        <p>Minimalist, ergonomic workspace and peripheral essentials tailored for students, developers, and remote professionals across Pakistan.</p>
+      </div>
+
+      <!-- Key Metrics Row -->
+      <div class="bp-kpi-grid">
+        <div class="bp-kpi-card">
+          <span class="kpi-label">Projected Monthly Revenue</span>
+          <strong class="kpi-value">Rs. 765,000</strong>
+          <span class="kpi-sub">Rs. 720k products + Rs. 45k shipping</span>
+        </div>
+        <div class="bp-kpi-card">
+          <span class="kpi-label">Average Order Value (AOV)</span>
+          <strong class="kpi-value">Rs. 5,100</strong>
+          <span class="kpi-sub">Includes Rs. 300 flat shipping</span>
+        </div>
+        <div class="bp-kpi-card">
+          <span class="kpi-label">Estimated Net Margin</span>
+          <strong class="kpi-value">~50%</strong>
+          <span class="kpi-sub">After COGS, Courier & Ads</span>
+        </div>
+        <div class="bp-kpi-card">
+          <span class="kpi-label">Target Conversion Rate</span>
+          <strong class="kpi-value">3.0%</strong>
+          <span class="kpi-sub">150 orders / 5,000 visitors</span>
+        </div>
+      </div>
+
+      <!-- Core Strategy Cards -->
+      <div class="bp-cards-grid">
+        <div class="bp-card">
+          <h3>💡 Planned Business Idea</h3>
+          <p><strong>DeskLabPK</strong> solves the problem of cluttered, uncomfortable workspaces by offering an affordable, matching matte-black and Nordic grey ecosystem—combining desk organization, lighting, and peripherals in one store.</p>
+        </div>
+        <div class="bp-card">
+          <h3>🎯 Marketing & Sale Strategy</h3>
+          <ul>
+            <li><strong>Dual Flash Sales:</strong> Promotional pricing on the <em>LED Ambient Light Bars</em> (Rs. 4,999) and <em>75% Mechanical Keyboard</em> (Rs. 6,999) to drive high-intent traffic.</li>
+            <li><strong>Short-Form Video:</strong> 15-sec TikTok & Instagram Reels "Before/After" desk transformations.</li>
+            <li><strong>Cross-Selling:</strong> Upselling the Rs. 1,199 Felt Desk Mat and Rs. 1,899 Headphone Stand to maximize the Rs. 300 flat shipping value.</li>
+          </ul>
+        </div>
+        <div class="bp-card">
+          <h3>🚚 Logistics & Area of Success</h3>
+          <ul>
+            <li><strong>Flat-Rate Shipping:</strong> Transparent Rs. 300 nationwide delivery across Pakistan (3–5 working days).</li>
+            <li><strong>Local Trust:</strong> Cash on Delivery (COD) + JazzCash/Easypaisa support.</li>
+            <li><strong>Cohesive Ecosystem:</strong> Customers can build a complete matching setup from a single cart.</li>
+          </ul>
+        </div>
+        <div class="bp-card">
+          <h3>📈 Revenue & Growth Model</h3>
+          <p>At 150 monthly orders (3.0% conversion on 5,000 visitors) with an average product basket of Rs. 4,800, DeskLab generates Rs. 720,000 in product sales plus Rs. 45,000 in shipping fees—totaling <strong>Rs. 765,000/month</strong> in gross revenue.</p>
+        </div>
+      </div>
+
+      <!-- Product Worth & Margin Table -->
+      <div class="bp-table-card">
+        <h3>📦 Product Worth & Unit Economics </h3>
+        <div class="table-responsive">
+          <table class="bp-table">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Unit Cost</th>
+                <th>Selling Price</th>
+                <th>Profit / Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Under-Desk Cable Management Tray</td>
+                <td>Organization</td>
+                <td>Rs. 1,100</td>
+                <td><strong>Rs. 2,599</strong></td>
+                <td class="text-green">Rs. 1,499</td>
+              </tr>
+              <tr>
+                <td>Minimalist LED Ambient Light Bars (Pair) <span class="pill pill-high">SALE</span></td>
+                <td>Lighting</td>
+                <td>Rs. 2,500</td>
+                <td><span class="old-price">Rs. 5,999</span> <strong>Rs. 4,999</strong></td>
+                <td class="text-green">Rs. 2,499</td>
+              </tr>
+              <tr>
+                <td>Ergonomic Folding Laptop & Tablet Stand</td>
+                <td>Ergonomics</td>
+                <td>Rs. 1,800</td>
+                <td><strong>Rs. 4,499</strong></td>
+                <td class="text-green">Rs. 2,699</td>
+              </tr>
+              <tr>
+                <td>Nordic Grey Felt Desk Mat</td>
+                <td>Accessories</td>
+                <td>Rs. 500</td>
+                <td><strong>Rs. 1,199</strong></td>
+                <td class="text-green">Rs. 699</td>
+              </tr>
+              <tr>
+                <td>Silent Wireless Ergonomic Mouse</td>
+                <td>Peripherals</td>
+                <td>Rs. 1,500</td>
+                <td><strong>Rs. 3,499</strong></td>
+                <td class="text-green">Rs. 1,999</td>
+              </tr>
+              <tr>
+                <td>Compact 75% Mechanical Keyboard <span class="pill pill-high">SALE</span></td>
+                <td>Peripherals</td>
+                <td>Rs. 3,800</td>
+                <td><span class="old-price">Rs. 7,999</span> <strong>Rs. 6,999</strong></td>
+                <td class="text-green">Rs. 3,199</td>
+              </tr>
+              <tr>
+                <td>7-in-1 Aluminum USB-C Hub</td>
+                <td>Accessories</td>
+                <td>Rs. 1,250</td>
+                <td><strong>Rs. 2,899</strong></td>
+                <td class="text-green">Rs. 1,649</td>
+              </tr>
+              <tr>
+                <td>Matte-Black Aluminum Headphone Stand</td>
+                <td>Organization</td>
+                <td>Rs. 800</td>
+                <td><strong>Rs. 1,899</strong></td>
+                <td class="text-green">Rs. 1,099</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Google Keyword Planner Table -->
+      <div class="bp-table-card">
+        <h3>🔍 Audience Interest (Google Keyword Planner)</h3>
+        <div class="table-responsive">
+          <table class="bp-table">
+            <thead>
+              <tr>
+                <th>Target Keyword</th>
+                <th>Avg. Monthly Searches</th>
+                <th>Competition</th>
+                <th>Est. CPC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>desk setup accessories</code></td>
+                <td>10K – 100K</td>
+                <td><span class="pill pill-med">Medium</span></td>
+                <td>Rs. 235</td>
+              </tr>
+              <tr>
+                <td><code>mechanical keyboard price in pakistan</code></td>
+                <td>10K – 100K</td>
+                <td><span class="pill pill-high">High</span></td>
+                <td>Rs. 280</td>
+              </tr>
+              <tr>
+                <td><code>wireless ergonomic mouse</code></td>
+                <td>10K – 100K</td>
+                <td><span class="pill pill-med">Medium</span></td>
+                <td>Rs. 210</td>
+              </tr>
+              <tr>
+                <td><code>under desk cable management</code></td>
+                <td>10K – 100K</td>
+                <td><span class="pill pill-med">Medium</span></td>
+                <td>Rs. 195</td>
+              </tr>
+              <tr>
+                <td><code>felt desk mat</code></td>
+                <td>1K – 10K</td>
+                <td><span class="pill pill-low">Low</span></td>
+                <td>Rs. 150</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Full-Page Product Detail View (Hidden by default) -->
+  <section id="product-detail-view" class="container section hidden">
+    <button id="back-to-store" class="btn-secondary" style="margin-bottom: 25px;">← Back to Store</button>
+    <div id="product-detail-content" class="detail-container">
+      <!-- Full product details injected dynamically by script.js -->
+    </div>
+  </section>
+
+  <!-- Shopping Cart & Checkout Drawer -->
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 id="drawer-title">Your Cart</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+      </div>
+
+      <!-- Cart View -->
+      <div id="cart-view" class="cart-view">
+        <div id="cart-items" class="cart-items">
+          <!-- Cart items injected here -->
+        </div>
+       <div class="cart-footer">
+          <div class="cart-row">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal">Rs. 0</span>
+          </div>
+          <div class="cart-row">
+            <span>Shipping (Nationwide):</span>
+            <span id="cart-shipping">Rs. 0</span>
+          </div>
+          <div class="cart-total">
+            <span>Total:</span>
+            <strong id="cart-total">Rs. 0</strong>
+          </div>
+          <button id="checkout-btn" class="btn-primary full-width">Proceed to Checkout</button>
+        </div>
+      </div>
+
+      <!-- Checkout Form View -->
+      <form id="checkout-form" class="checkout-form hidden">
+        <div class="form-group">
+          <label for="cust-name">Full Name</label>
+          <input type="text" id="cust-name" required placeholder="e.g. Najeeb Ahmed" />
+        </div>
+        <div class="form-group">
+          <label for="cust-phone">Phone Number</label>
+          <input type="tel" id="cust-phone" required placeholder="e.g. 0300-1234567" />
+        </div>
+        <div class="form-group">
+          <label for="cust-address">Delivery Address</label>
+          <textarea id="cust-address" rows="3" required placeholder="House #, Street, City"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" required>
+            <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+            <option value="JazzCash / Easypaisa">JazzCash / Easypaisa</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+          </select>
+        </div>
+        <div class="checkout-summary">
+          <span>Order Total:</span>
+          <strong id="checkout-total">Rs. 0</strong>
+        </div>
+        <button type="submit" class="btn-primary full-width">Place Order</button>
+        <button type="button" id="back-to-cart" class="btn-secondary full-width">Back to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo footer-logo" onclick="closeProductPage()">DeskLab<span>PK</span></a>
+        <p>Minimalist, ergonomic desk accessories designed to keep your workspace clutter-free and productive.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#catalog" onclick="closeProductPage()">Product Catalog</a></li>
+          <li><a href="#about" onclick="closeProductPage()">About Us</a></li>
+          <li><a href="#strategy" onclick="closeProductPage()">Business Plan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li>Nationwide Delivery (3–5 Days)</li>
+          <li>Cash on Delivery (COD)</li>
+          <li>7-Day Easy Replacement</li>
+          <li>JazzCash / Easypaisa Accepted</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>📧 najeebahmd69@gmail.com</li>
+          <li>📞 +92 308 9558396</li>
+          <li>📍 Karachi / Hyderabad, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 DeskLab PK. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
