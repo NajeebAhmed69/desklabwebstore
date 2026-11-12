@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeskLab </title>
+  <title>DeskLab</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Header / Navigation -->
   <header class="navbar">
     <div class="container nav-content">
-      <a href="#" class="logo" onclick="closeProductPage()">DeskLab<span>PK</span></a>
+      <a href="#" class="logo" onclick="showHomePage()">DeskLab<span>PK</span></a>
       <nav class="nav-links">
-      <nav class="nav-links">
-          <a href="#about" onclick="showHomePage()">About</a>
+        <a href="#about" onclick="showHomePage()">About</a>
         <a href="#catalog" onclick="showHomePage()">Products</a>
         <a href="javascript:void(0)" onclick="openBusinessPlan()">Business Plan</a>
-      </nav>
       </nav>
       <button id="cart-btn" class="cart-btn">
         🛒 Cart (<span id="cart-count">0</span>)
@@ -30,24 +28,20 @@
     <section id="about" class="hero">
       <div class="container hero-content">
         <h1>About DeskLabPK</h1>
-       <p> Minimalist, ergonomic desk accessories designed for focus, comfort, and zero clutter.
-
-            we believe your workspace shapes how you think, create, and work. Whether you are coding late into the night, designing your next project, or studying for exams, a cluttered desk shouldn't get in the way of your focus.We started DeskLab with a simple goal: to make clean, ergonomic, and thoughtfully designed desk setups accessible without the inflated price tags. Every item in our catalog is chosen to solve a real everyday workspace problem—from eliminating neck strain with precision-machined laptop stands and reducing desk echo with merino wool felt mats, to hiding tangled wires and lighting up your desk without screen glare.
-
+        <p>Minimalist, ergonomic desk accessories designed for focus, comfort, and zero clutter.
+          We believe your workspace shapes how you think, create, and work. Whether you are coding late into the night, designing your next project, or studying for exams, a cluttered desk shouldn't get in the way of your focus. We started DeskLab with a simple goal: to make clean, ergonomic, and thoughtfully designed desk setups accessible without the inflated price tags. Every item in our catalog is chosen to solve a real everyday workspace problem—from eliminating neck strain with precision-machined laptop stands and reducing desk echo with merino wool felt mats, to hiding tangled wires and lighting up your desk without screen glare.
         </p>
-         
         <a href="#catalog" class="btn-primary">Shop Now</a>
       </div>
     </section>
-<!-- About Section -->
-    
+
     <!-- Catalog Section -->
     <main id="catalog" class="container section">
       <div class="catalog-header">
-        <h2>Products </h2>
+        <h2>Products</h2>
         <div class="controls">
           <input type="text" id="search-input" placeholder="Search products..." />
-       <select id="category-filter">
+          <select id="category-filter">
             <option value="all">All Categories</option>
             <option value="organization">Organization</option>
             <option value="lighting">Lighting</option>
@@ -60,14 +54,13 @@
       </div>
 
       <div id="product-grid" class="product-grid">
-      
+        <!-- Products injected by script.js -->
       </div>
-      
     </main>
-<section  class="about-section">
+
+    <!-- About Highlights Section -->
+    <section class="about-section">
       <div class="container about-content">
-       
-     
         <div class="about-highlights">
           <div class="highlight-box">
             <strong>🇵🇰 Nationwide Delivery</strong>
@@ -77,23 +70,25 @@
             <strong>💵 Cash on Delivery</strong>
             <span>Pay safely at your doorstep</span>
           </div>
-          
+          <div class="highlight-box">
+            <strong>🎓 15% Student Discount</strong>
+            <span>Available at checkout with .edu.pk ID</span>
+          </div>
         </div>
       </div>
     </section>
   </div>
 
-
-
-
+  <!-- Business Plan Page View (Hidden by default) -->
   <section id="business-plan-view" class="bp-section hidden">
     <div class="container">
       <div class="bp-top-bar">
         <button onclick="showHomePage()" class="btn-secondary">← Back to Store</button>
+    
       </div>
 
       <div class="bp-header">
-        <h1>DeskLabPK — Business Plan & Analytics</h1>
+        <h1>DeskLab — Business Plan & Analytics</h1>
         <p>Minimalist, ergonomic workspace and peripheral essentials tailored for students, developers, and remote professionals across Pakistan.</p>
       </div>
 
@@ -101,23 +96,23 @@
       <div class="bp-kpi-grid">
         <div class="bp-kpi-card">
           <span class="kpi-label">Projected Monthly Revenue</span>
-          <strong class="kpi-value">Rs. 765,000</strong>
-          <span class="kpi-sub">Rs. 720k products + Rs. 45k shipping</span>
+          <strong class="kpi-value">Rs. 743,750</strong>
+          <span class="kpi-sub">175 orders / month (incl. student promo)</span>
         </div>
         <div class="bp-kpi-card">
           <span class="kpi-label">Average Order Value (AOV)</span>
-          <strong class="kpi-value">Rs. 5,100</strong>
-          <span class="kpi-sub">Includes Rs. 300 flat shipping</span>
+          <strong class="kpi-value">Rs. 4,250</strong>
+          <span class="kpi-sub">Blended after 15% student discount</span>
         </div>
         <div class="bp-kpi-card">
           <span class="kpi-label">Estimated Net Margin</span>
-          <strong class="kpi-value">~50%</strong>
+          <strong class="kpi-value">~48%</strong>
           <span class="kpi-sub">After COGS, Courier & Ads</span>
         </div>
         <div class="bp-kpi-card">
           <span class="kpi-label">Target Conversion Rate</span>
-          <strong class="kpi-value">3.0%</strong>
-          <span class="kpi-sub">150 orders / 5,000 visitors</span>
+          <strong class="kpi-value">3.5%</strong>
+          <span class="kpi-sub">175 orders / 5,000 visitors</span>
         </div>
       </div>
 
@@ -125,33 +120,34 @@
       <div class="bp-cards-grid">
         <div class="bp-card">
           <h3>💡 Planned Business Idea</h3>
-          <p><strong>DeskLabPK</strong> solves the problem of cluttered, uncomfortable workspaces by offering an affordable, matching matte-black and Nordic grey ecosystem—combining desk organization, lighting, and peripherals in one store.</p>
+          <p><strong>DeskLab</strong> solves the problem of cluttered, uncomfortable workspaces by offering an affordable, matching matte-black and Nordic grey ecosystem—combining desk organization, lighting, and peripherals in one store.</p>
         </div>
         <div class="bp-card">
           <h3>🎯 Marketing & Sale Strategy</h3>
           <ul>
-            <li><strong>Dual Flash Sales:</strong> Promotional pricing on the <em>LED Ambient Light Bars</em> (Rs. 4,999) and <em>75% Mechanical Keyboard</em> (Rs. 6,999) to drive high-intent traffic.</li>
+            <li><strong>University Student Program:</strong> Verified 15% discount at checkout using a <code>.edu.pk</code> email or student ID to capture campus demand.</li>
+            <li><strong>Dual Flash Sales:</strong> Promotional pricing on the <em>LED Ambient Light Bars</em> (Rs. 3,999) and <em>75% Mechanical Keyboard</em> (Rs. 6,999) to drive high-intent traffic.</li>
             <li><strong>Short-Form Video:</strong> 15-sec TikTok & Instagram Reels "Before/After" desk transformations.</li>
-            <li><strong>Cross-Selling:</strong> Upselling the Rs. 1,199 Felt Desk Mat and Rs. 1,899 Headphone Stand to maximize the Rs. 300 flat shipping value.</li>
+            <li><strong>Cross-Selling:</strong> Upselling budget essentials like the Rs. 1,199 Felt Desk Mat and Rs. 1,299 Cable Tray to maximize the Rs. 300 flat shipping fee.</li>
           </ul>
         </div>
         <div class="bp-card">
           <h3>🚚 Logistics & Area of Success</h3>
           <ul>
+            <li><strong>Aggressive Student Pricing:</strong> High-demand items like the Cable Tray (Rs. 1,299) and Mouse (Rs. 2,999) lower buyer hesitation.</li>
             <li><strong>Flat-Rate Shipping:</strong> Transparent Rs. 300 nationwide delivery across Pakistan (3–5 working days).</li>
             <li><strong>Local Trust:</strong> Cash on Delivery (COD) + JazzCash/Easypaisa support.</li>
-            <li><strong>Cohesive Ecosystem:</strong> Customers can build a complete matching setup from a single cart.</li>
           </ul>
         </div>
         <div class="bp-card">
           <h3>📈 Revenue & Growth Model</h3>
-          <p>At 150 monthly orders (3.0% conversion on 5,000 visitors) with an average product basket of Rs. 4,800, DeskLab generates Rs. 720,000 in product sales plus Rs. 45,000 in shipping fees—totaling <strong>Rs. 765,000/month</strong> in gross revenue.</p>
+          <p>Lower entry prices and the <strong>15% University Student Discount</strong> boost conversion to 3.5% (175 monthly orders on 5,000 visitors). Factoring in student discounts on ~40% of orders, our blended AOV is <strong>Rs. 4,250</strong> (including Rs. 300 shipping), generating <strong>Rs. 743,750/month</strong> in gross revenue.</p>
         </div>
       </div>
 
       <!-- Product Worth & Margin Table -->
       <div class="bp-table-card">
-        <h3>📦 Product Worth & Unit Economics </h3>
+        <h3>📦 Product Worth & Unit Economics (PKR)</h3>
         <div class="table-responsive">
           <table class="bp-table">
             <thead>
@@ -167,23 +163,23 @@
               <tr>
                 <td>Under-Desk Cable Management Tray</td>
                 <td>Organization</td>
-                <td>Rs. 1,100</td>
-                <td><strong>Rs. 2,599</strong></td>
-                <td class="text-green">Rs. 1,499</td>
+                <td>Rs. 600</td>
+                <td><strong>Rs. 1,299</strong></td>
+                <td class="text-green">Rs. 699</td>
               </tr>
               <tr>
                 <td>Minimalist LED Ambient Light Bars (Pair) <span class="pill pill-high">SALE</span></td>
                 <td>Lighting</td>
-                <td>Rs. 2,500</td>
-                <td><span class="old-price">Rs. 5,999</span> <strong>Rs. 4,999</strong></td>
-                <td class="text-green">Rs. 2,499</td>
+                <td>Rs. 2,000</td>
+                <td><span class="old-price">Rs. 4,999</span> <strong>Rs. 3,999</strong></td>
+                <td class="text-green">Rs. 1,999</td>
               </tr>
               <tr>
                 <td>Ergonomic Folding Laptop & Tablet Stand</td>
                 <td>Ergonomics</td>
                 <td>Rs. 1,800</td>
-                <td><strong>Rs. 4,499</strong></td>
-                <td class="text-green">Rs. 2,699</td>
+                <td><strong>Rs. 3,999</strong></td>
+                <td class="text-green">Rs. 2,199</td>
               </tr>
               <tr>
                 <td>Nordic Grey Felt Desk Mat</td>
@@ -195,9 +191,9 @@
               <tr>
                 <td>Silent Wireless Ergonomic Mouse</td>
                 <td>Peripherals</td>
-                <td>Rs. 1,500</td>
-                <td><strong>Rs. 3,499</strong></td>
-                <td class="text-green">Rs. 1,999</td>
+                <td>Rs. 1,400</td>
+                <td><strong>Rs. 2,999</strong></td>
+                <td class="text-green">Rs. 1,599</td>
               </tr>
               <tr>
                 <td>Compact 75% Mechanical Keyboard <span class="pill pill-high">SALE</span></td>
@@ -276,21 +272,6 @@
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Full-Page Product Detail View (Hidden by default) -->
   <section id="product-detail-view" class="container section hidden">
     <button id="back-to-store" class="btn-secondary" style="margin-bottom: 25px;">← Back to Store</button>
@@ -312,7 +293,7 @@
         <div id="cart-items" class="cart-items">
           <!-- Cart items injected here -->
         </div>
-       <div class="cart-footer">
+        <div class="cart-footer">
           <div class="cart-row">
             <span>Subtotal:</span>
             <span id="cart-subtotal">Rs. 0</span>
@@ -351,6 +332,19 @@
             <option value="Bank Transfer">Bank Transfer</option>
           </select>
         </div>
+
+        <!-- 15% University Student Discount Box -->
+        <div class="student-discount-box">
+          <label class="checkbox-label">
+            <input type="checkbox" id="student-check" onchange="toggleStudentDiscount()" />
+            <span>🎓 I am a University Student (15% Off Products)</span>
+          </label>
+          <div id="student-id-field" class="hidden" style="margin-top: 10px;">
+            <input type="text" id="student-uni-id" placeholder="Enter University Email (.edu.pk) or Roll No." />
+            <small id="student-discount-msg" style="color: #16a34a; display: block; margin-top: 5px; font-weight: 600;"></small>
+          </div>
+        </div>
+
         <div class="checkout-summary">
           <span>Order Total:</span>
           <strong id="checkout-total">Rs. 0</strong>
@@ -362,20 +356,19 @@
   </div>
 
   <!-- Footer -->
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="#" class="logo footer-logo" onclick="closeProductPage()">DeskLab<span>PK</span></a>
+        <a href="#" class="logo footer-logo" onclick="showHomePage()">DeskLab<span>PK</span></a>
         <p>Minimalist, ergonomic desk accessories designed to keep your workspace clutter-free and productive.</p>
       </div>
 
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#catalog" onclick="closeProductPage()">Product Catalog</a></li>
-          <li><a href="#about" onclick="closeProductPage()">About Us</a></li>
-          <li><a href="#strategy" onclick="closeProductPage()">Business Plan</a></li>
+          <li><a href="#catalog" onclick="showHomePage()">Product Catalog</a></li>
+          <li><a href="#about" onclick="showHomePage()">About Us</a></li>
+          <li><a href="javascript:void(0)" onclick="openBusinessPlan()">Business Plan</a></li>
         </ul>
       </div>
 

@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Under-Desk Cable Management Tray",
     category: "organization",
-    price: 2599,
+    price: 1299,
     image: "item-01.jpg",
     description: "Heavy-duty matte black steel clamp-on tray that hides power strips and cables.",
     fullDescription: "Keep your workspace clean and hazard-free with our heavy-duty Under-Desk Cable Management Tray. Designed with a no-drill clamp mechanism, it attaches securely to any desk in seconds and holds bulky power bricks, surge protectors, and excess wires completely out of sight.",
@@ -18,8 +18,8 @@ const products = [
     id: 2,
     name: "Minimalist LED Ambient Light Bars (Pair)",
     category: "lighting",
-    price: 4999,
-    originalPrice: 5999, // <-- Add this line for any product on sale
+    price: 3999,
+    originalPrice: 4999,
     image: "item-02.jpg",
     description: "Dual vertical matte-black LED light tubes with remote-controlled dimming.",
     fullDescription: "Transform your desk atmosphere for late-night coding, gaming, or studying. These dual vertical LED light bars cast a soft, glare-free ambient glow against your wall, reducing eye strain while elevating your setup's aesthetic.",
@@ -34,7 +34,7 @@ const products = [
     id: 3,
     name: "Ergonomic Folding Laptop & Tablet Stand",
     category: "ergonomics",
-    price: 4499,
+    price: 3999,
     image: "item-03.jpg",
     description: "Portable, height-adjustable stand that elevates your laptop and tablet to eye level.",
     fullDescription: "Say goodbye to neck and back pain. This ultra-portable folding stand raises your laptop screen to an ergonomic eye level, improving posture and airflow to keep your device cool during heavy workloads.",
@@ -64,7 +64,7 @@ const products = [
     id: 5,
     name: "Silent Wireless Ergonomic Mouse",
     category: "peripherals",
-    price: 3499,
+    price: 2999,
     image: "item-05.jpg",
     description: "Dual-mode Bluetooth & 2.4GHz wireless mouse with silent clicks and adjustable DPI.",
     fullDescription: "Work quietly from anywhere with our Silent Wireless Ergonomic Mouse. Contoured to fit naturally in your hand, it features whisper-quiet buttons, seamless switching between two devices, and a rechargeable battery that lasts up to 60 days.",
@@ -125,8 +125,10 @@ const products = [
 
 let cart = [];
 
-// DOM Elements
+// Constants & DOM Elements
 const SHIPPING_COST = 300;
+const STUDENT_DISCOUNT_RATE = 0.15; // 15% University Student Discount
+
 const cartSubtotal = document.getElementById("cart-subtotal");
 const cartShipping = document.getElementById("cart-shipping");
 const productGrid = document.getElementById("product-grid");
@@ -145,13 +147,34 @@ const checkoutForm = document.getElementById("checkout-form");
 const checkoutTotal = document.getElementById("checkout-total");
 const backToCartBtn = document.getElementById("back-to-cart");
 
+// Student Discount Elements
+const studentCheck = document.getElementById("student-check");
+const studentIdField = document.getElementById("student-id-field");
+const studentUniId = document.getElementById("student-uni-id");
+const studentDiscountMsg = document.getElementById("student-discount-msg");
+
+// Page Views
 const storeHomeView = document.getElementById("store-home-view");
 const productDetailView = document.getElementById("product-detail-view");
 const productDetailContent = document.getElementById("product-detail-content");
 const backToStoreBtn = document.getElementById("back-to-store");
+const businessPlanView = document.getElementById("business-plan-view");
 
 function formatPKR(amount) {
   return `Rs. ${amount.toLocaleString()}`;
+}
+
+function toggleStudentDiscount() {
+  if (!studentCheck) return;
+  if (studentCheck.checked) {
+    studentIdField.classList.remove("hidden");
+    studentUniId.setAttribute("required", "true");
+  } else {
+    studentIdField.classList.add("hidden");
+    studentUniId.removeAttribute("required");
+    studentUniId.value = "";
+  }
+  updateCartUI();
 }
 
 function renderProducts(items) {
@@ -214,16 +237,10 @@ function openProductPage(id) {
   `;
 
   storeHomeView.classList.add("hidden");
+  businessPlanView.classList.add("hidden");
   productDetailView.classList.remove("hidden");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-
-function closeProductPage() {
-  productDetailView.classList.add("hidden");
-  storeHomeView.classList.remove("hidden");
-}
-const businessPlanView = document.getElementById("business-plan-view");
 
 function openBusinessPlan() {
   storeHomeView.classList.add("hidden");
@@ -238,10 +255,10 @@ function showHomePage() {
   storeHomeView.classList.remove("hidden");
 }
 
-// Keep closeProductPage working for the logo/back button
 function closeProductPage() {
   showHomePage();
 }
+
 function filterProducts() {
   const query = searchInput.value.toLowerCase();
   const category = categoryFilter.value;
@@ -281,14 +298,22 @@ function updateQty(id, change) {
 function updateCartUI() {
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const isStudent = studentCheck && studentCheck.checked;
+  const discount = isStudent ? Math.round(subtotal * STUDENT_DISCOUNT_RATE) : 0;
   const shipping = totalItems > 0 ? SHIPPING_COST : 0;
-  const finalTotal = subtotal + shipping;
+  const finalTotal = subtotal - discount + shipping;
 
   cartCount.textContent = totalItems;
   cartSubtotal.textContent = formatPKR(subtotal);
   cartShipping.textContent = formatPKR(shipping);
   cartTotal.textContent = formatPKR(finalTotal);
   checkoutTotal.textContent = formatPKR(finalTotal);
+
+  if (studentDiscountMsg) {
+    studentDiscountMsg.textContent = isStudent
+      ? `15% Student Discount Applied (-${formatPKR(discount)})`
+      : "";
+  }
 
   cartItemsContainer.innerHTML = "";
   if (cart.length === 0) {
@@ -353,12 +378,19 @@ checkoutForm.addEventListener("submit", (e) => {
   const name = document.getElementById("cust-name").value;
   const payment = document.getElementById("payment-method").value;
   const total = checkoutTotal.textContent;
+  const studentNote = studentCheck && studentCheck.checked
+    ? `\nStudent ID: ${studentUniId.value} (15% Off Applied)`
+    : "";
 
-  alert(`Order Confirmed!\n\nThank you, ${name}.\nTotal: ${total}\nPayment Method: ${payment}\n\nYour DeskHub PK order is on its way!`);
+  alert(`Order Confirmed!\n\nThank you, ${name}.\nTotal: ${total}\nPayment Method: ${payment}${studentNote}\n\nYour DeskLab order is on its way!`);
 
   cart = [];
-  updateCartUI();
   checkoutForm.reset();
+  if (studentCheck) {
+    studentCheck.checked = false;
+    toggleStudentDiscount();
+  }
+  updateCartUI();
   showCartView();
   cartModal.classList.add("hidden");
 });
@@ -366,4 +398,3 @@ checkoutForm.addEventListener("submit", (e) => {
 // Initial Render
 renderProducts(products);
 updateCartUI();
-
