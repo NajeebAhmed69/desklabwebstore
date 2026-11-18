@@ -2,7 +2,7 @@
 
 **DeskLab** is a responsive Direct-to-Consumer (D2C) e-commerce web application tailored for university students, software developers, and remote workers across Pakistan. Built using vanilla **HTML5, CSS3, and JavaScript**, it combines a modern storefront with an interactive **Business Plan & Unit Economics Dashboard**.
 
-🌐 **Live Demo:** [https://najeebahmed69.github.io/desklab-ecoomerce/](https://najeebahmed69.github.io/desklab-ecoomerce/)
+🌐 **Live Demo:** [https://najeebahmed69.github.io/desklabwebstore/](https://najeebahmed69.github.io/desklabwebstore/)
 
 ---
 
